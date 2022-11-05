@@ -1,29 +1,51 @@
-import React, {useState} from 'react'
+import React, { useContext } from 'react'
 import Header from "./Header"
 import {Link, Outlet} from 'react-router-dom'
+import { AuthContext } from '../contexts/AuthContext'
 
 
 function Dashboard() {
+
+  const {user} = useContext(AuthContext);
+  console.log(user)
   
   return (
-     <div className='dashboard'>
-       <Header />
-       <div className='dashboard-body'>
-         <div className='left'>
-           <Link to = '/dashboard'><p>Dashboard</p></Link>
-           <Link to = '/dashboard/lesson'><p>Lessons</p></Link>
-           <Link to = '/dashboard/videos'><p>Videos</p></Link>
-           <Link to = '/dashboard'><p>Account</p></Link>
-           <Link to = '/dashboard'><p>Logout</p></Link>
-         </div>
-         <div className='right'>
-            <h1>Hi Anna</h1>
-            <Outlet/>
-         </div>
-        
-       </div>
-        
-    </div>
+     <AuthContext.Consumer>
+        {(value) => (
+             <div className='dashboard'>
+                 <Header/>
+                 {user?(
+                 <div className='dashboard-body'>
+                     <div className='left'>
+                       <Link to = '/dashboard'><p>Dashboard</p></Link>
+                       <Link to = '/dashboard/lesson'><p>Lessons</p></Link>
+                       <Link to = '/dashboard/videos'><p>Videos</p></Link>
+                       <Link to = '/dashboard'><p>Account</p></Link>
+                       <Link to = '/dashboard'><p>Logout</p></Link>
+                     </div>
+                     <div className='right'>
+                        <h1>{value.user.username}</h1>
+                        <Outlet/>
+                     </div>
+                </div>
+                ) : (
+               <div>
+                  <p>"You are not logged in"</p>
+                 <Link to='/login'>Login</Link>
+                 <button onClick=()=>{setUser({
+                 username: 'Anatiola',
+                 name: 'Anna'
+                 })}>loginnnn</button>
+               </div>
+                   
+                 )
+                 };
+            
+           </div>
+        )}
+    </AuthContext.Consumer>
+
+
   )
 }
 
