@@ -4,8 +4,103 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
 p{
-  font-size: x-large;
+  Font-size: large;
+  color: #292929
+}
+h1{
+  font-size: 20px;
+  margin: 20px;
+  color: #292929;
+  text-align: center;
+}
+.App-header{
+  width: 100vw;
+  height: 60px;
+  background: white;
+  color: #32004d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 0 2px 0 #363636;
+  padding: 0 10px 0 10px
+}
+.App-header nav{
+  display: flex
+}
+.App-header nav ul {
+  margin: 10px;
+  color: #250033;
+  font-size: large;
+}
+.App-header nav ul:hover {
+  margin: 10px;
+  color: #d16500ff;
+}
+
+.dashboard-body{
+  width: 100vw;
+  height: 100vh;
+  background: #fafafa;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-body .right{
+  height: 100%;
+  align-items: center;
+  text-allign: center;
+  
+}
+.dashboard-body .left{
+  height: 100%;
+  align-items: center;
+  text-allign: center;
+  background: black;
+  padding: 0 40px;
+}
+.dashboard-body .left p {
+  margin-top: 20px;
+  font-size: large;
+  color: white
+}
+.home-body-1{
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.home-body-2{
+  height: 100vh;
+  text-align: center;
+  background: #d16500ff;
+  align-items: center;
+  justify-content: center;
+}
+.home-body-3{
+  padding:  10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.form{
+  height: 100vh;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px 200px;
+
+
+
+
+
+
+@media only screen and (min-width:768px) {
+p{
+  Font-size: x-large;
   color: #292929
 }
 h1{
@@ -118,4 +213,5 @@ h1{
 
 .form button:hover {
   background-color: #45a049;
+}
 }

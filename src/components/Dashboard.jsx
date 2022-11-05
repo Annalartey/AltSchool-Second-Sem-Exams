@@ -6,8 +6,14 @@ import { AuthContext } from '../contexts/AuthContext'
 
 function Dashboard() {
 
-  const {user} = useContext(AuthContext);
+  const {user, setUser} = useContext(AuthContext);
   console.log(user)
+
+  // const handleClick= () => {
+  //   setUser({
+  //     username: 'Anatiola'
+  //   })
+  // }
   
   return (
      <AuthContext.Consumer>
@@ -24,7 +30,7 @@ function Dashboard() {
                        <Link to = '/dashboard'><p>Logout</p></Link>
                      </div>
                      <div className='right'>
-                        <h1>{value.user.username}</h1>
+                        <h1>Hello {value.user.username}</h1>
                         <Outlet/>
                      </div>
                 </div>
