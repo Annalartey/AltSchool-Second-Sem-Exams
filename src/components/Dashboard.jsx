@@ -32,10 +32,6 @@ function Dashboard() {
                <div>
                   <p>"You are not logged in"</p>
                  <Link to='/login'>Login</Link>
-                 <button onClick=()=>{setUser({
-                 username: 'Anatiola',
-                 name: 'Anna'
-                 })}>loginnnn</button>
                </div>
                    
                  )
