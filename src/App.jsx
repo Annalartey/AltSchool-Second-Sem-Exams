@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import About from "./components/About";
 import Dashboard from "./components/Dashboard"
 import Lessons from "./components/Lessons";
 import Videos from "./components/Videos";
@@ -21,7 +20,6 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/dashboard" element={<Dashboard />} >
           <Route path="lesson" element={<Lessons />}>
             <Route path="grade_1" element={<GradeOneLesson />} />
