@@ -4,6 +4,7 @@ import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
+  XMarkIcon
 } from '@heroicons/react/24/outline'
 
 export default function Header() {
@@ -64,6 +65,26 @@ export default function Header() {
             className="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden"
           >
             <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+        <div className="px-5 pt-5 pb-6">
+          <div className="flex items-center justify-between">
+                  <div>
+                    <img
+                      className="h-8 w-auto"
+                      src={logo}
+                      alt="lear logo"
+                    />
+                  </div>
+                  <div className="-mr-2">
+                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                      <span className="sr-only">Close menu</span>
+                      <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                    </Popover.Button>
+                  </div>
+                </div>
+
+
+</div>
+              
               <div className="space-y-6 py-6 px-5">
                 <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                   <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700">

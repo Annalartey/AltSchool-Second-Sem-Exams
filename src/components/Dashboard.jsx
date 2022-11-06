@@ -29,14 +29,14 @@ function Dashboard() {
                  <Header/>
                  {user?(
                  <div className='dashboard-body'>
-                     <div className='left'>
+                     <div className='nav'>
                        <Link to = '/dashboard'><p>Dashboard</p></Link>
                        <Link to = '/dashboard/lesson'><p>Lessons</p></Link>
                        <Link to = '/dashboard/videos'><p>Videos</p></Link>
                        <Link to = '/dashboard'><p>Account</p></Link>
                        <Link to = '/dashboard'><p>Logout</p></Link>
                      </div>
-                     <div className='right'>
+                     <div className='body'>
                         <h1>Hello {value.user.username}</h1>
                         <Outlet/>
                      </div>

@@ -17,7 +17,7 @@ return (
   <div>
     <Header />
     <form onSubmit={handleSubmit} className='form'>
-      <h1 className="sm:text-5xl md:text-4xl lg:text-4xl xl:text-4xl text-center block text-gray-900 xl:inline">Login</h1>
+      <h1 className="sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl text-center block text-gray-900 xl:inline">Login</h1>
       <div>
       <label>Email:</label>
       <input 
