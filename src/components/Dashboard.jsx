@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import Header from "./Header"
 import {Link, Outlet} from 'react-router-dom'
 import { AuthContext } from '../contexts/AuthContext'
+import {Helmet} from 'react-helmet-async'
 
 
 function Dashboard() {
@@ -16,6 +17,12 @@ function Dashboard() {
   // }
   
   return (
+    <>
+       <Helmet>
+        <title>Dashboard</title>
+        <meta name="description" content="Track your learning progress in your dashboard" />
+         <link rel="canonical" href="/dashboard" />
+      </Helmet>
      <AuthContext.Consumer>
         {(value) => (
              <div className='dashboard'>
@@ -47,7 +54,7 @@ function Dashboard() {
         )}
     </AuthContext.Consumer>
 
-
+</>
   )
 }
 

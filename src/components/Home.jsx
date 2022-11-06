@@ -1,9 +1,15 @@
 import React from 'react'
 import Header from './Header'
 import img1 from "../images/img1.jpg";
+import {Helmet} from 'react-helmet-async'
 
 function Home() {
   return (
+    <>
+      <Helmet>
+        <title>Home</title>
+        <meta name="description" content="Start your learning journey with us" />
+      </Helmet>
     <div>
       <Header/>
       <div className='home-body-1'>
@@ -23,6 +29,8 @@ function Home() {
       </div>
       
     </div>
+
+    </>
   )
 }
 
