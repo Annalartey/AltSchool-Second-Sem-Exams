@@ -1,36 +1,5 @@
-// import React from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../images/logo.svg'
-
-// function Header() {
-//   return (
-//     <div className='App-header'>
-//       <div className='logo'>Learn</div>
-//       <nav>
-//         <Link to = "/"><ul>Home</ul></Link>
-//         <Link to = "/dashboard"><ul>Dashboard</ul></Link>
-//       </nav>
-//       <nav>
-//         <Link to = "/login"><ul>Login</ul></Link>
-//         <Link to = "/signup"><ul>Signup</ul></Link>
-//       </nav>
-//     </div>
-//   )
-// }
-
-// export default Header
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
@@ -49,7 +18,7 @@ export default function Header() {
                 <img
                   className="h-8 w-auto sm:h-10"
                   src={logo}
-                  alt=""
+                  alt="learn logo"
                 />
               </a>
             </div>
@@ -69,15 +38,14 @@ export default function Header() {
               </Link>
             </Popover.Group>
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-              <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-                Sign in
-              </a>
-              <a
-                href="#"
+              <Link to="/login" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+                Login
+              </Link>
+              <Link to="/signup"
                 className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
               >
                 Sign up
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -98,26 +66,25 @@ export default function Header() {
             <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
               <div className="space-y-6 py-6 px-5">
                 <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                  <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    Pricing
-                  </a>
+                  <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    Home
+                  </Link>
 
-                  <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    Docs
-                  </a>
+                  <Link to="/dashboard" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    Dashboard
+                  </Link>
                 </div>
                 <div>
-                  <a
-                    href="#"
+                  <Link to="/login"
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                   >
-                    Sign up
-                  </a>
+                    Login
+                  </Link>
                   <p className="mt-6 text-center text-base font-medium text-gray-500">
-                    Existing customer?
-                    <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                      Sign in
-                    </a>
+                    Not registered yet?
+                    <Link to="/signup" className="text-indigo-600 hover:text-indigo-500">
+                      Sign up
+                    </Link>
                   </p>
                 </div>
               </div>
