@@ -15,7 +15,7 @@ export default function Header() {
           <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link to="/">
-                <span className="text-gray-900 sr-only">Learn</span>
+                <span className="text-gray-900">Learn</span>
                 <img
                   className="h-20 w-auto sm:h-10"
                   src={logo}
