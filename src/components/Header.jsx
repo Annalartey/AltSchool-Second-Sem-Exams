@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import logo from '../images/logo.svg'
+import logo from '../images/logo1.svg'
 import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
@@ -14,14 +14,14 @@ export default function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
-              <a href="#">
-                <span className="sr-only">Learn</span>
+              <Link to="/">
+                <span className="text-gray-900 sr-only">Learn</span>
                 <img
-                  className="h-8 w-auto sm:h-10"
+                  className="h-20 w-auto sm:h-10"
                   src={logo}
                   alt="learn logo"
                 />
-              </a>
+              </Link>
             </div>
             <div className="-my-2 -mr-2 md:hidden">
               <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
