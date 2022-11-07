@@ -4,3 +4,4 @@ https://anna-lartey-exams-project.netlify.app/login
 https://anna-lartey-exams-project.netlify.app/signup
 https://anna-lartey-exams-project.netlify.app/lessons
 https://anna-lartey-exams-project.netlify.app/videos
+https://anna-lartey-exams-project.netlify.app/*

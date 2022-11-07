@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import logo from '../images/logo1.svg'
 import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
@@ -6,8 +6,23 @@ import {
   Bars3Icon,
   XMarkIcon
 } from '@heroicons/react/24/outline'
+import { useNavigate } from "react-router-dom";
+import useAuth from './../hooks/useAuth'
 
 export default function Header() {
+  const { user, handleAuthLogout } = useAuth()
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    const res = await handleAuthLogout()
+    if (!res) {
+      alert("There was an error logging you out. Try again later")
+      return
+    }
+
+    navigate('/')
+  }
+
   return (
     <div className="relative bg-gray-50">
       <Popover className="relative bg-white shadow">
@@ -31,22 +46,36 @@ export default function Header() {
             </div>
             <Popover.Group as="nav" className="hidden space-x-10 md:flex">
 
-              <Link to = "/" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
                 Home
               </Link>
-              <Link to = "/dashboard" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <Link to="/dashboard" className="text-base font-medium text-gray-500 hover:text-gray-900">
                 Dashboard
               </Link>
             </Popover.Group>
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-              <Link to="/login" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-                Login
-              </Link>
-              <Link to="/signup"
-                className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-              >
-                Sign up
-              </Link>
+              {user ? (
+                <span>
+                  <span>{user?.firstName} {user?.lastName}</span>
+                  <button
+                    className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </span>
+              ) : (
+                <span>
+                  <Link to="/login" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+                    Login
+                  </Link>
+                  <Link to="/signup"
+                    className="ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
+                  >
+                    Sign up
+                  </Link>
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -65,8 +94,8 @@ export default function Header() {
             className="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden"
           >
             <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-        <div className="px-5 pt-5 pb-6">
-          <div className="flex items-center justify-between">
+              <div className="px-5 pt-5 pb-6">
+                <div className="flex items-center justify-between">
                   <div>
                     <img
                       className="h-8 w-auto"
@@ -83,8 +112,8 @@ export default function Header() {
                 </div>
 
 
-</div>
-              
+              </div>
+
               <div className="space-y-6 py-6 px-5">
                 <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                   <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700">

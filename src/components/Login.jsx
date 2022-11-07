@@ -1,29 +1,54 @@
 import React from 'react'
 import Header from './Header'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "../App.css"
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  let location = useLocation();
+  let success = location.state?.success;
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { handleAuthLogin } = useAuth();
+  let navigate = useNavigate();
 
+  useEffect(() => {
+    if (success) {
+      alert('success')
+      navigate("/login", { state: undefined });
+    }
+  }, []);
   const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  console.log(email, password)
-  }
+    e.preventDefault();
+    let res = await handleAuthLogin(username, password);
+    if (res.success) {
+      navigate("/dashboard", {
+        state: {
+          username,
+        },
+      });
+      setUsername("");
+      setPassword("");
+    } else {
+      console.log(res.error);
+      alert(res.error);
+    }
+  };
 
 return (
   <div>
     <Header />
-    <form onSubmit={handleSubmit} className='form'>
+    <form 
+      onSubmit={(e) => handleSubmit(e)} 
+    className='form'>
       <h1 className="sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl text-center block text-gray-900 xl:inline">Login</h1>
       <div>
       <label>Email:</label>
       <input 
-      type='email'
-      onChange={(e) => setEmail(e.target.value)}
-      value={email}
+      type='text'
+      onChange={(e) => setUsername(e.target.value)}
+      value={username}
       />
       <label>Password:</label>
       <input 
@@ -35,6 +60,12 @@ return (
 
       <button>Login</button>
   </form>
+    <Link
+              className="inline-block"
+              to="/signup"
+            >
+              Dont have an account yet? Signup
+            </Link>
   </div>
   
 )
