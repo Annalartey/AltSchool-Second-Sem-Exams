@@ -20,6 +20,7 @@ export default function Header() {
       return
     }
 
+    alert("You are logging out of learn")
     navigate('/')
   }
 

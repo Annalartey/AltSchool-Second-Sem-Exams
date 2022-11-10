@@ -2,10 +2,22 @@ import React from 'react'
 import Header from "./Header"
 import { Link, Outlet } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 function Dashboard() {
-  const { user } = useAuth();
+    const { user, handleAuthLogout } = useAuth()
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    const res = await handleAuthLogout()
+    if (!res) {
+      alert("There was an error logging you out. Try again later")
+      return
+    }
+
+    alert("You are logging out of learn")
+    navigate('/')
+  }
 
   return (
     <>
@@ -25,7 +37,7 @@ function Dashboard() {
                   <Link to='/dashboard/lesson'><p>Lessons</p></Link>
                   <Link to='/dashboard/videos'><p>Videos</p></Link>
                   <Link to='/dashboard'><p>Account</p></Link>
-                  <Link to='/dashboard'><p>Logout</p></Link>
+                  <Link to='/dashboard'><p onClick={handleLogout}>Logout</p></Link>
                 </div>
                 <div className='body'>
                  <h1>Hello {user.firstName}</h1>
