@@ -49,7 +49,7 @@ function Dashboard() {
              <Link to ="/login" className="text-green-400 ">Login</Link>
              </div>
             }
-            <Outlet />
+           
           </div>
     </>
   )

@@ -126,6 +126,18 @@ export default function Header() {
                   </Link>
                 </div>
                 <div>
+                   {user ? (
+                <span>
+                  <span>{user?.firstName} {user?.lastName}</span>
+                  <button
+                    className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </span>
+              ) : (
+            <span>
                   <Link to="/login"
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                   >
@@ -137,6 +149,7 @@ export default function Header() {
                       Sign up
                     </Link>
                   </p>
+            </span>)}
                 </div>
               </div>
             </div>
