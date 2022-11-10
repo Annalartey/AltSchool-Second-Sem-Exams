@@ -40,7 +40,8 @@ function Dashboard() {
                   <Link to='/dashboard'><p onClick={handleLogout}>Logout</p></Link>
                 </div>
                 <div className='body'>
-                 <h1>Hello {user.firstName}</h1>
+                 <h1>Hello {user?.firstName}</h1>
+                   <Outlet />
                 </div>
               </div>
                 :
