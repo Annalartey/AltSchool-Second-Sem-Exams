@@ -22,7 +22,18 @@ const UserAuthContext = ({ children }) => {
       setUser(matchingUser)
       localStorage.setItem("user", JSON.stringify(matchingUser));
       return { success: "successful" };
-    } else {
+    } else if (password !== null && username !==null){
+      console.log(password)
+      console.log(username)
+      const matchingUser = {
+        firstName: username,
+        lastName: password
+      }
+      setUser(matchingUser)
+      localStorage.setItem("user", JSON.stringify(matchingUser));
+      return { success: "successful" };
+    }
+    else {
       return { error: "Wrong username or password, please try again" };
     }
   };
