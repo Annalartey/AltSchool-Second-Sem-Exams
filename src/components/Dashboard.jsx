@@ -32,9 +32,9 @@ function Dashboard() {
                 </div>
               </div>
                 :
-           <div>
+           <div className='align-center'>
                 <h1 className="text-center text-gray-500 text-4xl font-semibold tracking-tight sm:text-4xl md:text-3xl lg:text-3xl xl:text-4xl">Please Login to access dashboard</h1>
-             <Link to ="/login" className="text-center text-green-400 ">Login</Link>
+             <Link to ="/login" className="text-green-400 ">Login</Link>
              </div>
             }
             <Outlet />
