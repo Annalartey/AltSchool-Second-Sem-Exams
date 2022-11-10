@@ -5,7 +5,7 @@ module.exports = {
      './**/*.html',
      './**/*.{js,jsx,ts,tsx,vue}',
    ],
-  content: ["./src/**/*.{html,jxs}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
   },
