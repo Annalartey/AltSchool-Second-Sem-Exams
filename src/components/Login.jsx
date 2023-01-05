@@ -4,14 +4,27 @@ import { useState, useEffect } from 'react';
 import "../App.css"
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from '../firebase'
+// import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import axios from './api/axios';
+
+
+
+
 
 function Login() {
   let location = useLocation();
   let success = location.state?.success;
-  const [username, setUsername] = useState("");
+  
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  
   const [password, setPassword] = useState("");
-  const { handleAuthLogin } = useAuth();
+  
   let navigate = useNavigate();
+
 
   useEffect(() => {
     if (success) {
@@ -19,21 +32,22 @@ function Login() {
       navigate("/login", { state: undefined });
     }
   }, []);
-  const handleSubmit = async (e) => {
+  
+  const handleSubmit = (e) => {
     e.preventDefault();
-    let res = await handleAuthLogin(username, password);
-    if (res.success) {
-      navigate("/dashboard", {
-        state: {
-          username,
-        },
-      });
-      setUsername("");
+    
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user)
+    navigate("/dashboard");
+      setEmail("");
       setPassword("");
-    } else {
-      console.log(res.error);
-      alert(res.error);
-    }
+  })
+  .catch((error) => {
+    setError(true);
+  });
   };
 
 return (
@@ -44,11 +58,11 @@ return (
     className='form'>
       <h1 className="sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl text-center block text-gray-900 xl:inline">Login</h1>
       <div>
-      <label>Username:</label>
+      <label>Email:</label>
       <input 
-      type='text'
-      onChange={(e) => setUsername(e.target.value)}
-      value={username}
+      type='email'
+      onChange={(e) => setEmail(e.target.value)}
+      value={email}
       />
       <label>Password:</label>
       <input 
@@ -59,6 +73,7 @@ return (
     </div>
 
       <button>Login</button>
+      { error && <p> Wrong email or password </p> }
   </form>
     <Link
               className="inline-block"
@@ -72,3 +87,18 @@ return (
 }
 
 export default Login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

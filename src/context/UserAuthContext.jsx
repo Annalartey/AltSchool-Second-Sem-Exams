@@ -42,6 +42,7 @@ const UserAuthContext = ({ children }) => {
 
   const handleAuthRegister = (username, password) => {
     localStorage.setItem(username, JSON.stringify(password));
+    console.log(username, password)
   };
 
   const handleAuthLogout = () => {
