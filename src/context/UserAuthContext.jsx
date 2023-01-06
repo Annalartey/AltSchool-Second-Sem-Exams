@@ -1,8 +1,16 @@
 import React, { createContext, useState } from "react";
+import { getAuth } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+// import {auth} from '../firebase'
 
 export const Context = createContext();
+
 const UserAuthContext = ({ children }) => {
   const [user, setUser] = useState(null);
+  const auth = getAuth();
+  // const user = auth.currentUser;
+
+
 
   const refreshUser = () => {
     const lsUser = localStorage.getItem("user")
@@ -11,33 +19,20 @@ const UserAuthContext = ({ children }) => {
     }
   }
 
-  const handleAuthLogin = (username, password) => {
-    let sysPass = 'password'
-    let sysUsername = 'admin'
-    if (password === sysPass && username === sysUsername) {
-      const matchingUser = {
-        firstName: 'Anna',
-        lastName: 'Lartey'
-      }
-      setUser(matchingUser)
-      localStorage.setItem("user", JSON.stringify(matchingUser));
-      return { success: "successful" };
-    } else if (password !== "" && username !== ""){
-      console.log(password)
-      console.log(username)
-      const matchingUser = {
-        firstName: username,
-        lastName: password
-      }
-      setUser(matchingUser)
-      localStorage.setItem("user", JSON.stringify(matchingUser));
-      return { success: "successful" };
-    }else if (password ===""  && username ===""){
-      return { error: "Please your username and password is empty" };
-    } 
-    else {
-      return { error: "Wrong username or password, please try again" };
-    }
+  const handleAuthLogin = async (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        localStorage.setItem("user", JSON.stringify(user));
+        refreshUser()
+        navigate("/dashboard");
+        setEmail("");
+        setPassword("");
+      })
+      .catch((error) => {
+        "email or password incorrect."
+      });
   };
 
   const handleAuthRegister = (username, password) => {
