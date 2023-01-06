@@ -27,11 +27,11 @@ function SignUp() {
   const [email, setEmail] = useState("");
    const [emailFocus, setEmailFocus] = useState(false);
   
-    const [pwd, setPwd] = useState('');
-    const [validPwd, setValidPwd] = useState(false);
-    const [pwdFocus, setPwdFocus] = useState(false);
+    const [password, setPassword] = useState('');
+    const [validPassword, setValidPassword] = useState(false);
+    const [pwdFocus, setPasswordFocus] = useState(false);
 
-    const [matchPwd, setMatchPwd] = useState('');
+    const [matchPassword, setMatchPassword] = useState('');
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
 
@@ -45,31 +45,33 @@ useEffect(() => {
     }, [])
 
   useEffect(() => {
-        setValidPwd(PWD_REGEX.test(pwd));
-        setValidMatch(pwd === matchPwd);
-    }, [pwd, matchPwd])
+        setValidPassword(PWD_REGEX.test(password));
+        setValidMatch(password === matchPassword);
+    }, [password, matchPassword])
 
     useEffect(() => {
         setErrMsg('');
-    }, [email, pwd, matchPwd])
+    }, [email, password, matchPassword])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log( email , pwd )
+    console.log( email , password )
 
-    createUserWithEmailAndPassword(auth, email, pwd)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log(user)
-    navigate("/dashboard");
+    try {
+      let res = await handleAuthRegister(email, password);
+      navigate("/dashboard", {
+        state: {
+          email,
+        },
+      });
       setEmail("");
       setPassword("");
-  })
-  .catch((error) => {
-    setError(true);
-  });
+    } catch (e) {
+      // console.log(res?.error);
+      // alert(res?.error);
+    }
+
   };
   
 
@@ -104,23 +106,23 @@ useEffect(() => {
                         </p>
 
         
-         <label htmlFor="pwd">
+         <label htmlFor="password">
                             Password:
-                            <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
+                            <FontAwesomeIcon icon={faCheck} className={validPassword ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validPassword || !password ? "hide" : "invalid"} />
                         </label>
                         <input
-                            type="pwd"
-                            id="pwd"
-                            onChange={(e) => setPwd(e.target.value)}
-                            value={pwd}
+                            type="password"
+                            id="password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
                             required
-                            aria-invalid={validPwd ? "false" : "true"}
+                            aria-invalid={validPassword ? "false" : "true"}
                             aria-describedby="pwdnote"
-                            onFocus={() => setPwdFocus(true)}
-                            onBlur={() => setPwdFocus(false)}
+                            onFocus={() => setPasswordFocus(true)}
+                            onBlur={() => setPasswordFocus(false)}
                         />
-                        <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
+                        <p id="pwdnote" className={pwdFocus && !validPassword ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             8 to 24 characters.<br />
                             Must include uppercase and lowercase letters, a number and a special character.<br />
@@ -131,14 +133,14 @@ useEffect(() => {
         
         <label htmlFor="confirm_pwd">
                             Confirm Password:
-                            <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
+                            <FontAwesomeIcon icon={faCheck} className={validMatch && matchPassword ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPassword ? "hide" : "invalid"} />
                         </label>
                         <input
-                            type="pwd"
+                            type="password"
                             id="confirm_pwd"
-                            onChange={(e) => setMatchPwd(e.target.value)}
-                            value={matchPwd}
+                            onChange={(e) => setMatchPassword(e.target.value)}
+                            value={matchPassword}
                             required
                             aria-invalid={validMatch ? "false" : "true"}
                             aria-describedby="confirmnote"
@@ -151,7 +153,7 @@ useEffect(() => {
                         </p>
 
 
-        <button disabled={!email || !validPwd || !validMatch ? true : false}>Sign Up</button>
+        <button disabled={!email || !validPassword || !validMatch ? true : false}>Sign Up</button>
         
     </form>
       <Link to="/login"> Already have an account? login</Link>
