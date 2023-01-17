@@ -19,7 +19,7 @@ function ErrorPage() {
       <div>
       <p className="text-3xl"> 404. <span className="text-gray-300">That's an error</span></p>
         <p>Sorry, page not found. The URL you are looking for is not here</p>
-        <p>We have a beautifully designed <Link className="text-gray-800" to= '/'>Home</Link> where you can hang arround for the main time.</p>
+        <p>We have a beautifully designed <Link className="text-gray-800" to= '/'>Home Page</Link> where you can hang arround for the main time.</p>
         </div>
     </div>
     </>

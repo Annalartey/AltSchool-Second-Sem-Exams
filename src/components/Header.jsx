@@ -57,7 +57,7 @@ export default function Header() {
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               {user ? (
                 <span>
-                  <span>{user?.firstName} {user?.lastName}</span>
+                  <span>{user?.displayName}</span>
                   <button
                     className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                     onClick={handleLogout}
@@ -128,7 +128,7 @@ export default function Header() {
                 <div>
                    {user ? (
                 <span>
-                  <span>{user?.firstName} {user?.lastName}</span>
+                  <span>{user?.displayName}</span>
                   <button
                     className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                     onClick={handleLogout}
@@ -144,7 +144,7 @@ export default function Header() {
                     Login
                   </Link>
                   <p className="mt-6 text-center text-base font-medium text-gray-500">
-                    Not registered yet?
+                    Not registered yet? 
                     <Link to="/signup" className="text-indigo-600 hover:text-indigo-500">
                       Sign up
                     </Link>

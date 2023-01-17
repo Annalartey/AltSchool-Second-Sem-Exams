@@ -16,14 +16,14 @@ function App() {
 
 
   return (
-    <ErrorBoundary FallbackComponent={ErrorHandler}>
+     <ErrorBoundary FallbackComponent={ErrorHandler}>
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} >
-          <Route path="lesson" element={<Lessons />}>
-            <Route path="grade_1" element={<GradeOneLesson />} />
-          </Route>
+            <Route path="lesson" element={<Lessons />}>
+             <Route path="grade_1" element={<GradeOneLesson />} />
+            </Route>
             <Route path="videos" element={<Videos />} />
           </Route>
           <Route path="/login" element={<Login />} />

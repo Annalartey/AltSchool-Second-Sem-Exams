@@ -303,6 +303,12 @@ button {
     display: inline-block;
 }
 
+.btn{
+  padding: 10px;
+   border-radius: 0.5rem;
+  margin-top: 40px;
+}
+
 
 
 
@@ -400,8 +406,8 @@ h1{
 .dashboard-body .nav{
   width: 20%;
   height: 100%;
-  align-items: center;
-  text-allign: center;
+  align-items: left;
+  text-allign: left;
   background: black;
   padding: 20px;
   display: flex;
@@ -409,6 +415,12 @@ h1{
 }
 .dashboard-body .nav p {
   color: white;
-   margin-top: 40px;
 }
+.dashBody{
+  display: flex;
 }
+  .btn{
+    
+  }
+}
+
