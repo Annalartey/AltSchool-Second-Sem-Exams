@@ -418,6 +418,8 @@ h1{
 }
 .dashBody{
   display: flex;
+  direction: row;
+  padding: 10px;
 }
   .btn{
     

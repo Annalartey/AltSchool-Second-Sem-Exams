@@ -30,19 +30,19 @@ function Dashboard() {
   let projects = [
     {
       title: "Calculator",
-      info: "A simple calculator made with vanilla JS, HTML/CSS",
+      info: "",
       link: "https://a-calculator-for-you.netlify.app/",
       
     },
     {
       title: "Task Tracker",
-      info: "An app that helps you track your tasks for the day.",
+      info: "",
       link: "https://trasker.netlify.app/",
      
     },
     {
       title: "Stopwatch",
-      info: "A simple stopwatch built with vanilla JS, HTML/CSS",
+      info: "",
       link: "https://a-stopwatch.netlify.app/",
    
     },
@@ -84,13 +84,13 @@ function Dashboard() {
                   </div>
                 </div>
                 <div className='body'>
-                 <h1>Hello {user?.displayName}</h1>
-                  <div className="dashBody lg:mx-10 flex flex-col md:flex-col flex-wrap">
+                 <h1>Welcome, {user?.displayName}</h1>
+                 <div className="dashBody">
           {projects.map((project, projectIndex) => {
             return (
               <a
                 key={projectIndex}
-                className="w-full md:w-1/2 lg:w-1/3 text-center md:text-left py-6"
+                className="w-40 h-40 p-10 text-center md:text-left py-6"
                 href={project.link || ""}
                 target="__blank"
                 rel="noreferrer"
@@ -114,8 +114,9 @@ function Dashboard() {
           })}
         </div>
                   </div>
-                  <Outlet/>
+                   <Outlet/>
                 </div>
+          
                 :
            <div className='w-60'>
                 <h1 className="text-center text-green-500 text-4xl font-semibold tracking-tight sm:text-4xl md:text-3xl lg:text-3xl xl:text-4xl">Please Login to access dashboard</h1>

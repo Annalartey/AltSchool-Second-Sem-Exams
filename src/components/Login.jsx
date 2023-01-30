@@ -25,6 +25,8 @@ function Login() {
   const [password, setPassword] = useState("");
   const { handleAuthLogin } = useAuth();
 
+
+
   let navigate = useNavigate();
 
 
@@ -35,8 +37,10 @@ function Login() {
     }
   }, []);
 
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     //   signInWithEmailAndPassword(auth, email, password)
     // .then((userCredential) => {
@@ -53,9 +57,10 @@ function Login() {
     // .catch((error) => {
     //   setError(true);
     // });
-
+ 
     try {
       let res = await handleAuthLogin(email, password);
+     
       navigate("/dashboard", {
         state: {
           email,
@@ -91,7 +96,7 @@ function Login() {
           />
         </div>
 
-        <button>Login</button>
+        <button>{loading? "Loading..." : "loading"}</button>
         {error && <p> Wrong email or password </p>}
       </form>
       <Link
