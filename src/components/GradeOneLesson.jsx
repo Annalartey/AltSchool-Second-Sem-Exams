@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function GradeOneLesson() {
+  const [input, setInput] = useState("")
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted")
+    console.log("submitted", input)
   }
   function updateLocalStorage(){
     localStorage.setItem("score", JSON.stringify(score))
@@ -19,7 +20,7 @@ if (!score){
     <div>
       <h1>GradeOneLesson</h1>
       <p>what is {num1} + {num2} ?</p>
-      <input type="text" value="input" />
+      <input type="text" value={input} onChange ={(e) => setInput(e.target.value) } />
       <button onClick={handleSubmit}>Submit</button>
       <p>{score}</p>
     </div>
