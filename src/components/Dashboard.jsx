@@ -113,8 +113,9 @@ function Dashboard() {
             );
           })}
         </div>
+                  <Outlet/>
                   </div>
-                   <Outlet/>
+                   
                 </div>
           
                 :
