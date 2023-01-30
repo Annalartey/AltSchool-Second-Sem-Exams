@@ -1,45 +1,27 @@
 import React from 'react'
 
 function GradeOneLesson() {
- let questions = [
-    {
-      id: 1,
-      que: "what is 1 + 1",
-      ans: 2,
-    },
-    {
-      id: 2,
-      que: "what is 2 + 1",
-      ans: 3,
-    },
-  {
-      id: 3,
-      que: "what is 3 + 1",
-      ans: 4,
-    },
-  {
-      id: 4,
-      que: "what is 4 + 1",
-      ans: 5,
-    }
-  ]
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted")
+  }
+  function updateLocalStorage(){
+    localStorage.setItem("score", JSON.stringify(score))
+}
+
+const num1 = Math.ceil(Math.random()*10)
+const num2 = Math.ceil(Math.random()*10)
+let score = JSON.parse(localStorage.getItem("score"));
+if (!score){
+    score = 0;
+}
   return (
     <div>
       <h1>GradeOneLesson</h1>
-      <div>
-        {questions.map((q) => (
-      <div>
-        <p>{q.id}</p>
-        <p>{q.que}</p>
-      </div>
-          
-          
-      
-    )
-      )},
-      </div>
-      <p>Question</p>
-      <p>Answers</p>
+      <p>what is {num1} + {num2} ?</p>
+      <input type="text" value="input" />
+      <button onClick={handleSubmit}>Submit</button>
+      <p>{score}</p>
     </div>
   )
 }
