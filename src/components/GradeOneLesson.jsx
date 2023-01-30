@@ -2,16 +2,22 @@ import React, {useState} from 'react'
 
 function GradeOneLesson() {
   const [input, setInput] = useState("")
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted", input)
+    console.log("submitted", input, ans)
+    { if(input == ans){
+      console.log("correct")
+    } else {console.log("try again")}}
   }
+  
   function updateLocalStorage(){
     localStorage.setItem("score", JSON.stringify(score))
 }
 
 const num1 = Math.ceil(Math.random()*10)
 const num2 = Math.ceil(Math.random()*10)
+const ans = num1 + num2
 let score = JSON.parse(localStorage.getItem("score"));
 if (!score){
     score = 0;
