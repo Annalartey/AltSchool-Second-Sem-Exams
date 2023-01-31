@@ -96,7 +96,7 @@ function Login() {
           />
         </div>
 
-        <button>{loading? "Loading..." : "loading"}</button>
+        <button>{loading? "Loading..." : "Login"}</button>
         {error && <p> Wrong email or password </p>}
       </form>
       <Link

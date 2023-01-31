@@ -14,9 +14,42 @@ h1{
   text-align: center;
   font-weight: semi-bold;
 }
+
+
+
+
+/*tyle for lessons page*/
+
 .lessons-nav{
   display: flex;
   justify-content: space-between;
+}
+.g-1-lesson-head{
+  color: green;
+}
+.g-1-lesson-1{
+  width: 500px;
+  padding: 40px;
+  allign-items: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+.g-1-question{
+  text-align: center;
+  font-size: 50px;
+}
+.score{
+  text-align: center;
+}
+.g-1-lesson-input{
+   width: 100%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 /*
 
@@ -357,6 +390,7 @@ h1{
   background-color: #19431b;
 }
 
+/* style for Dashboard  */
 .dashboard-body{
   height: 100vh;
   background: #fafafa;
