@@ -21,9 +21,13 @@ function GradeOneLesson() {
     localStorage.setItem("score", JSON.stringify(score));
   }
 
-  useEffect(() => {
+  function mathCalc() {
     setNum1(Math.ceil(Math.random() * 10)),
     setNum2(Math.ceil(Math.random() * 10));
+  }
+
+  useEffect(() => {
+    mathCalc();
   }, []);
 
   const ans = num1 + num2;
@@ -47,6 +51,7 @@ function GradeOneLesson() {
         />
 
         <button onClick={handleSubmit}>Submit</button>
+        <button onClick={mathCalc}>Next</button>
         <p className="score"> Score: {score}</p>
       </div>
     </div>
