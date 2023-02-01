@@ -4,17 +4,21 @@ function GradeOneLesson() {
   const [input, setInput] = useState("");
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
+  const [score, setScore] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitted", input, ans);
     {
       if (input == ans) {
-        console.log("correct");
+        console.log("correct"),
+        setScore(score + 1)
       } else {
-        console.log("try again");
+        console.log("try again"),
+        setScore(score - 1)
       }
     }
+    updateLocalStorage(),
   };
 
   function updateLocalStorage() {
@@ -32,9 +36,9 @@ function GradeOneLesson() {
 
   const ans = num1 + num2;
 
-  let score = JSON.parse(localStorage.getItem("score"));
+  let userScore = JSON.parse(localStorage.getItem("score"));
   if (!score) {
-    score = 0;
+    userScore = 0;
   }
   return (
     <div>
@@ -52,7 +56,7 @@ function GradeOneLesson() {
 
         <button onClick={handleSubmit}>Submit</button>
         <button onClick={mathCalc}>Next</button>
-        <p className="score"> Score: {score}</p>
+        <p className="score"> Score: {userScore}</p>
       </div>
     </div>
   );
