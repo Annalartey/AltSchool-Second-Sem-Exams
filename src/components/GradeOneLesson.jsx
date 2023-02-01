@@ -18,7 +18,7 @@ function GradeOneLesson() {
         setScore(score - 1)
       }
     }
-    updateLocalStorage(),
+    updateLocalStorage()
   };
 
   function updateLocalStorage() {
