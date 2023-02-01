@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 function GradeOneLesson() {
+  
   const [input, setInput] = useState("");
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [score, setScore] = useState(0);
+
+  function updateLocalStorage() {
+    localStorage.setItem("score", JSON.stringify(score));
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,12 +23,11 @@ function GradeOneLesson() {
         setScore(score - 1)
       }
     }
-    updateLocalStorage()
+    updateLocalStorage(),
+    console.log(score)
   };
 
-  function updateLocalStorage() {
-    localStorage.setItem("score", JSON.stringify(score));
-  }
+  
 
   function mathCalc() {
     setNum1(Math.ceil(Math.random() * 10)),
