@@ -6,6 +6,7 @@ import Lessons from "./components/Lessons";
 import Videos from "./components/Videos";
 import Login from "./components/Login";
 import GradeOneLesson from "./components/GradeOneLesson";
+import GradeTwoLesson from "./components/GradeTwoLesson";
 import ErrorPage from "./components/ErrorPage";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorHandler from "./components/ErrorHandler";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} >
             <Route path="lesson" element={<Lessons />}>
              <Route path="grade_1" element={<GradeOneLesson />} />
+             <Route path="grade_2" element={<GradeTwoLesson />} />
             </Route>
             <Route path="videos" element={<Videos />} />
           </Route>

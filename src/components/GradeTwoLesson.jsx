@@ -31,8 +31,8 @@ function GradeOneLesson() {
   
 
   function mathCalc() {
-    setNum1(Math.ceil(Math.random() * 5)),
-    setNum2(Math.ceil(Math.random() * 5));
+    setNum1(Math.ceil(Math.random() * 10)),
+    setNum2(Math.ceil(Math.random() * 10));
   }
 
   useEffect(() => {
@@ -47,7 +47,7 @@ function GradeOneLesson() {
   }
   return (
     <div>
-      <h1 className="g-1-lesson-head">GradeOneLesson</h1>
+      <h1 className="g-1-lesson-head">Grade Two Lesson</h1>
       <div className="g-1-lesson-1">
         <p className="g-1-question">
           what is {num1} + {num2} ?

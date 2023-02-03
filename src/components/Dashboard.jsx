@@ -68,23 +68,24 @@ function Dashboard() {
                   </div>
                   <div className='flex mt-10'>
                     <FolderIcon className='text-white w-6 h-6'/>
-                    <Link to='/dashboard/lesson'><p>Lessons</p></Link>
+                    <Link to='/dashboard/lesson'>
+                    <ul>
+                      <li>
+                        <p>Lessons</p>
+                        <ul>
+                          <Link to='/dashboard/lesson/grade_1'>Grade 1</Link>
+                          <Link to='/dashboard/lesson/grade_2'>Grade 2</Link>
+                          <Link to='/dashboard/lesson/grade_1'>Grade 2</Link>
+                        </ul>
+                      </li>
+                      </ul>
+
+                    </Link>
                   </div>
 
 
-<div>
-  <a href="#">Useless Link</a>
-  <ul>
-    <li>
-      <a href="#">Dropdown Link</a>
-      <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-      </ul>
-    </li>
-    </ul>
-  </div>
+
+  
 
 
                   
