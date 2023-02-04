@@ -492,7 +492,8 @@ div a {
 }
 ul li {display: inline-block;}
 ul li:hover {background: #555;}
-ul li:hover ul {display: block;}
+ul li:hover ul {display: flex;
+               flex-direction: row}
 ul li ul {
   position: absolute;
   width: 200px;
