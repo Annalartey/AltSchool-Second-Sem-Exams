@@ -4,7 +4,7 @@ import img1 from "../images/img1.jpg";
 import {Helmet} from 'react-helmet-async'
 import {Link} from 'react-router-dom'
 import "../App.css"
-
+import ClientsComments from './ClientsComments'
 function Home() {
   return (
     <>
@@ -54,6 +54,7 @@ function Home() {
             alt="children learning"
           />
         </div>
+  <ClientsComments/>
       </main>
 
     </div>
