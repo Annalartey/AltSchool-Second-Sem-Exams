@@ -38,7 +38,11 @@ export default function ClientComments () {
       {
         data.map((d)=>{
           return (
-<p> {d.name}</p>
+            <div className="comment-card">
+              <p> {d.name}</p>
+<p>{d.comment} </p>
+
+            </div>
             )
           }
 )

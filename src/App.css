@@ -500,4 +500,11 @@ ul li ul {
   display: none;
   } 
 ul li ul li a {display:block !important;} 
-ul li ul li:hover {background: #666;}
+ul li ul li:hover {background: blue;}
+
+comment-card{
+  width: 150px;
+  height: 150px;
+  background-color: yellow; 
+  
+}
