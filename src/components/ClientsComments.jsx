@@ -32,7 +32,7 @@ export default function ClientComments () {
   ]
   return (
     <>
-      <div> 
+      <div className="comment-space"> 
     <h1> What clients say about us </h1>
     <div>
       {
