@@ -54,8 +54,9 @@ function Home() {
             alt="children learning"
           />
         </div>
-  <ClientsComments/>
+
       </main>
+          <ClientsComments/>
 
     </div>
 

@@ -32,15 +32,15 @@ export default function ClientComments () {
   ]
   return (
     <>
-      <div className="comment-space"> 
-    <h1> What clients say about us </h1>
-    <div>
-      {
-        data.map((d)=>{
-          return (
-            <div className="comment-card">
-              <p> {d.name}</p>
-<p>{d.comment} </p>
+      <div className = "comment-space"> 
+         <h1> What clients say about us </h1>
+          <div className="comment-div">
+           {
+            data.map((d)=>{
+              return (
+                <div className = "comment-card">
+                  <p> {d.name}</p>
+    <p>{d.comment} </p>
 
             </div>
             )
