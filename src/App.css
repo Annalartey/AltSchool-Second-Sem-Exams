@@ -502,17 +502,23 @@ ul li ul {
 ul li ul li a {display:block !important;} 
 ul li ul li:hover {background: blue;}
 
-.comment-card {
-  width: 150px;
-  height: 150px;
-  background: blue; 
+.comment-space {
+  padding: 10px;
+  
 }
-
 .comment-div {
   display: flex;
+  flex-wrap: wrap;
+  justify-items: space-around;
 }
-
-.comment-space {
-  background: yellow;
-  
+.comment-card {
+  width: 250px;
+  height: 250px;
+  background: whitesmoke; 
+  box-shadow: gray 6px;
+  border:  gray 2px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
 }

@@ -6,27 +6,26 @@ export default function ClientComments () {
     {
       name: "Anna",
       image: "imgurl",
+      prof: "Teacher",
       comment: "i haven't seen any learning app as simple as Learn",
     },
     {
       name: "Blessing",
       image: "imgurl",
+      prof: "Parent",
       comment: "i haven't seen any learning app as simple as Learn",
     },
     {
       name: "David",
       image: "imgurl",
+      prof: "Proprietor",
       comment: "i haven't seen any learning app as simple as Learn",
     },
     
     {
       name: "Vicky",
       image: "imgurl",
-      comment: "i haven't seen any learning app as simple as Learn",
-    },
-    {
-      name: "Sharron Wehns",
-      image: "imgurl",
+      prof: "parent",
       comment: "i haven't seen any learning app as simple as Learn",
     },
   ]
@@ -40,14 +39,16 @@ export default function ClientComments () {
               return (
                 <div className = "comment-card">
                   <p> {d.name}</p>
-    <p>{d.comment} </p>
+                  <p> {d.prof}</p>
+                  <p>{d.comment} </p>
 
-            </div>
+                </div>
             )
           }
 )
       }
     </div>
+        <button>Join The Winning Team</button>
   </div>
     </>
     )
