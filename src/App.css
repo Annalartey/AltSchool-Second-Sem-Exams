@@ -310,10 +310,22 @@ ul li ul li:hover {background: blue;}
   width: 250px;
   height: 250px;
   background: whitesmoke; 
-  box-shadow: gray 6px;
   border:  gray 2px;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.comment-img {
+  width: 80px;
+  height: 80px;
+  border: 2px red;
+  border-radius: 100%;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

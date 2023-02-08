@@ -39,7 +39,7 @@ export default function ClientComments () {
             data.map((d)=>{
               return (
                 <div className = "comment-card">
-                  <img src={d.image} alt="picture"/>
+                  <img className="comment-img" src={d.image} alt="picture"/>
                   <p> {d.name}</p>
                   <p> {d.prof}</p>
                   <p>{d.comment} </p>
