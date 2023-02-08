@@ -1,30 +1,31 @@
 import React from 'react';
+import image1 from "../images/img1.jpg"
 
 
 export default function ClientComments () {
   const data = [
     {
       name: "Anna",
-      image: "imgurl",
+      image: image1,
       prof: "Teacher",
       comment: "i haven't seen any learning app as simple as Learn",
     },
     {
       name: "Blessing",
-      image: "imgurl",
+      image: image1,
       prof: "Parent",
       comment: "i haven't seen any learning app as simple as Learn",
     },
     {
       name: "David",
-      image: "imgurl",
+      image: image1,
       prof: "Proprietor",
       comment: "i haven't seen any learning app as simple as Learn",
     },
     
     {
       name: "Vicky",
-      image: "imgurl",
+      image: image1,
       prof: "parent",
       comment: "i haven't seen any learning app as simple as Learn",
     },
@@ -38,6 +39,7 @@ export default function ClientComments () {
             data.map((d)=>{
               return (
                 <div className = "comment-card">
+                  <img src={d.image} alt="picture"/>
                   <p> {d.name}</p>
                   <p> {d.prof}</p>
                   <p>{d.comment} </p>
