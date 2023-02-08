@@ -15,10 +15,26 @@ h1{
   font-weight: semi-bold;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+button{
+  background: blue;
+  color: white;
+  cursor: pointer;
+}
+button:hover{
+  background: white;
+  color: blue;
+}
 
 
-
-/*tyle for lessons page*/
+/*style for lessons page*/
 
 .lessons-nav{
   display: flex;
@@ -54,7 +70,7 @@ h1{
 
 
 
-
+/* style for signin and singup form*/
 section {
     width: 100%;
     max-width: 420px;
@@ -64,14 +80,6 @@ section {
     justify-content: flex-start;
     padding: 1rem;
     background-color: rgba(0,0,0,0.4);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-grow: 1;
-    padding-bottom: 1rem;
 }
 
 input[type="text"],
@@ -232,7 +240,7 @@ width: 100vw;
   background-color: #f2f2f2;
   padding: 20px 140px;
 }
-
+/*style for dashboard desktop */
 .dashboard-body{
   display: flex;
   flex-direction: row;
@@ -268,6 +276,8 @@ width: 100vw;
   }
 }
 
+
+/*style for slider */
 div a {
   text-decoration: none;
   color: blue;
@@ -293,6 +303,8 @@ ul li ul {
 ul li ul li a {display:block !important;} 
 ul li ul li:hover {background: blue;}
 
+
+/** style for client comment section **/
 .comment-space {
   padding: 10px;
    display: flex;
