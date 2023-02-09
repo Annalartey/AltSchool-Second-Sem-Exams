@@ -34,6 +34,11 @@ button:hover{
 }
 
 
+/*style for header  */
+.logo{
+  display: flex;
+  align-items: center;
+}
 /*style for lessons page*/
 
 .lessons-nav{
