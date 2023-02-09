@@ -39,6 +39,10 @@ button:hover{
   display: flex;
   align-items: center;
 }
+/*style for home page  */
+.home_text{
+  color: blue;
+}
 /*style for lessons page*/
 
 .lessons-nav{
