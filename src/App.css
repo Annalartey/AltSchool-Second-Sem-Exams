@@ -315,7 +315,7 @@ ul li ul li:hover {background: blue;}
 
 /** style for client comment section **/
 .comment-space {
-  padding: 10px;
+  padding: 60px 10px;
    display: flex;
   flex-direction: column;
   justify-content: center;
