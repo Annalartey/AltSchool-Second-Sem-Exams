@@ -294,16 +294,18 @@ div a {
   display:inline-block;
 }
 
-
-  ul {
+/*style for pop-up   */
+ul {
   display: inline;
   margin: 0;
   padding: 0;
 }
 ul li {display: inline-block;}
-ul li:hover {background: #555;}
-ul li:hover ul {display: flex;
-               flex-direction: row}
+ul li:hover {}
+ul li:hover ul {
+  background: #555; 
+  display: flex;
+  flex-direction: column}
 ul li ul {
   position: absolute;
   width: 200px;

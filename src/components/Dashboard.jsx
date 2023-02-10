@@ -73,9 +73,9 @@ function Dashboard() {
                       <li>
                         <p>Lessons</p>
                         <ul>
-                          <Link to='/dashboard/lesson/grade_1'>Grade 1</Link>
-                          <Link to='/dashboard/lesson/grade_2'>Grade 2</Link>
-                          <Link to='/dashboard/lesson/grade_1'>Grade 2</Link>
+                          <Link to='/grade_1'>Grade 1</Link>
+                          <Link to='/grade_2'>Grade 2</Link>
+                          <Link to='/grade_1'>Grade 2</Link>
                         </ul>
                       </li>
                       </ul>

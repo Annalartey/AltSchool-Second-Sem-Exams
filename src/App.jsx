@@ -22,12 +22,11 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} >
-            <Route path="lesson" element={<Lessons />}>
-             <Route path="grade_1" element={<GradeOneLesson />} />
-             <Route path="grade_2" element={<GradeTwoLesson />} />
-            </Route>
+            <Route path="lesson" element={<Lessons />}/>
             <Route path="videos" element={<Videos />} />
           </Route>
+          <Route path="/grade_1" element={<GradeOneLesson />} />
+          <Route path="/grade_2" element={<GradeTwoLesson />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="*" element={<ErrorPage />} />

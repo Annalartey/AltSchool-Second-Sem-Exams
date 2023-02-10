@@ -2,13 +2,15 @@ import React from 'react'
 import {Link, Outlet} from 'react-router-dom'
 
 function Lessons() {
-  data = [
+ const data = [
     {grade: "One",
     star: "*",
-    link:""},
+    link:"/grade_1"
+    },
     {grade: "Two",
     star: "**",
-    link:""},
+    link:""
+    },
     {grade: "Three",
     star: "***",
     link:""},
@@ -24,18 +26,12 @@ function Lessons() {
   ]
   return (
     <div>
-        <h1>Lessons</h1>
-      <div className="lessons-nav">
-        <Link to = '/dashboard/lesson/grade_1'>grade 1</Link>
-        <Link to = '/dashboard/lesson/grade_1'>grade 2</Link>
-        <Link to = '/dashboard/lesson/grade_1'>grade 3</Link>
-      </div>
-
-      <div>
+      <h1>Lessons</h1>
+      <div className='flex flex-wrap'>
         {
           data.map((d) => {
             return(
-              <Link to = {d.link}>
+              <Link className='comment-card' to = {d.link}>
                 <p> Grade {d.grade} Lesson</p>
                 <p>{d.star}</p>
               </Link>
@@ -43,8 +39,6 @@ function Lessons() {
           })
         }
       </div>
-        
-        <Outlet/>
     </div>
 
   )
