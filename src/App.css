@@ -311,8 +311,10 @@ ul li ul {
   width: 200px;
   display: none;
   } 
-ul li ul li a {display:block !important;} 
-ul li ul li:hover {background: blue;}
+ul li ul li a {display:block !important;
+              color: white} 
+ul li ul li:hover {background: blue;
+                  color: white}
 
 
 /** style for client comment section **/
