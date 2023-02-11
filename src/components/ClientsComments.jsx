@@ -41,8 +41,8 @@ export default function ClientComments () {
             <div className = "comment-card">
                   <img className="comment-img" src={d.image} alt="picture"/>
                   <p className ="comment-name"> {d.name}</p>
-                  <p> {d.prof}</p>
-                  <p>{d.comment} </p>
+                  <p> - {d.prof} -</p>
+              <p> "{d.comment}" </p>
 
                 </div>
             )
