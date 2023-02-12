@@ -98,13 +98,14 @@ function Login() {
 
         <button>{loading? "Loading..." : "Login"}</button>
         {error && <p> Wrong email or password </p>}
-      </form>
-      <Link
+        <Link
         className="inline-block"
         to="/signup"
       >
         Dont have an account yet? Signup
       </Link>
+      </form>
+      
     </div>
 
   )
