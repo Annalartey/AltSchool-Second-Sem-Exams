@@ -3,7 +3,7 @@ import React from 'react';
 export default function AffiliateLogo () {
   return (
 <div>
-hello affiliate schools
+hello affiliate schools{}{{
   </div>
     )
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 import image1 from "../images/img1.jpg"
 
 
@@ -50,7 +51,7 @@ export default function ClientComments () {
 )
       }
     </div>
-        <button>Join The Winning Team</button>
+       <Link to="./signup" > <button>Join The Winning Team</button> </Link>
   </div>
     </>
     )
