@@ -155,8 +155,9 @@ useEffect(() => {
 
         <button disabled={!email || !validPassword || !validMatch ? true : false}>Sign Up</button>
         
+        <Link to="/login"> Already have an account? login</Link>
     </form>
-      <Link to="/login"> Already have an account? login</Link>
+      
     </div>
     
   )
