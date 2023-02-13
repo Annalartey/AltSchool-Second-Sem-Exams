@@ -360,3 +360,15 @@ ul li ul li:hover {background: blue;
   font-weight: bold;
   margin: 4px 0;
     }
+
+
+/*style for affiliate section */
+.affiliate {
+  background: gray;
+  padding: 60px 10px;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}

@@ -20,7 +20,7 @@ export default function AffiliateLogo () {
     },
   ]
   return (
-  <div className='bg-gray-100'>
+  <div className="affiliate">
     hello affiliate schools
     <div>
       {
