@@ -323,6 +323,7 @@ ul li ul li:hover {background: blue;
    display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   
 }
 .comment-div {
