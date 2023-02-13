@@ -20,14 +20,14 @@ export default function AffiliateLogo () {
     },
   ]
   return (
-  <div>
+  <div className='bg-gray-100'>
     hello affiliate schools
     <div>
       {
         logo.map((l) => {
           return(
             <div>
-               l.name
+              <p>{l.name}</p> 
             </div>
            
           )
