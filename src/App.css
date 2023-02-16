@@ -364,7 +364,7 @@ ul li ul li:hover {background: blue;
 
 /*style for affiliate section */
 .affiliate {
-  background: gray;
+  background: #d9d9d9;
   padding: 60px 10px;
    display: flex;
   flex-direction: column;
