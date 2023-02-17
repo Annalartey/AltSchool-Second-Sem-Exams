@@ -27,24 +27,7 @@ function Dashboard() {
     navigate('/')
   }
 
-  let projects = [
-    {
-      title: "Calculator",
-      info: "",
-      link: "https://a-calculator-for-you.netlify.app/",
-      
-    },
-    {
-      title: "Task Tracker",
-      info: "",
-      link: "https://trasker.netlify.app/",
-     
-    },
-    {
-      title: "Stopwatch",
-      info: "",
-      link: "https://a-stopwatch.netlify.app/",
-   
+  
     },
   ]
 
