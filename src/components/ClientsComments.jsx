@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom"
 import image1 from "../images/img1.jpg"
 
 
@@ -39,11 +38,11 @@ export default function ClientComments () {
            {
             data.map((d)=>{
               return (
-            <div className = "comment-card">
+                <div className = "comment-card">
                   <img className="comment-img" src={d.image} alt="picture"/>
-                  <p className ="comment-name"> {d.name}</p>
-                  <p> - {d.prof} -</p>
-              <p> "{d.comment}" </p>
+                  <p> {d.name}</p>
+                  <p> {d.prof}</p>
+                  <p>{d.comment} </p>
 
                 </div>
             )
@@ -51,7 +50,7 @@ export default function ClientComments () {
 )
       }
     </div>
-       <Link to="./signup" > <button>Join The Winning Team</button> </Link>
+        <button>Join The Winning Team</button>
   </div>
     </>
     )

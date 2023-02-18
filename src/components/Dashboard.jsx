@@ -27,8 +27,26 @@ function Dashboard() {
     navigate('/')
   }
 
-  
-    
+  let projects = [
+    {
+      title: "Calculator",
+      info: "",
+      link: "https://a-calculator-for-you.netlify.app/",
+      
+    },
+    {
+      title: "Task Tracker",
+      info: "",
+      link: "https://trasker.netlify.app/",
+     
+    },
+    {
+      title: "Stopwatch",
+      info: "",
+      link: "https://a-stopwatch.netlify.app/",
+   
+    },
+  ]
 
   return (
     <>
@@ -55,9 +73,9 @@ function Dashboard() {
                       <li>
                         <p>Lessons</p>
                         <ul>
-                         <li> <Link to='/grade_1'>Grade 1</Link> </li> 
-                         <li> <Link to='/grade_2'>Grade 2</Link> </li> 
-                         <li> <Link to='/grade_1'>Grade 2</Link> </li> 
+                          <Link to='/dashboard/lesson/grade_1'>Grade 1</Link>
+                          <Link to='/dashboard/lesson/grade_2'>Grade 2</Link>
+                          <Link to='/dashboard/lesson/grade_1'>Grade 2</Link>
                         </ul>
                       </li>
                       </ul>
