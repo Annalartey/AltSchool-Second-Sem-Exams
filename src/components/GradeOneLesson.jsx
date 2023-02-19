@@ -26,6 +26,7 @@ function GradeOneLesson() {
     updateLocalStorage(),
     setInput("")
     console.log(score)
+    mathCalc()
   };
 
   
