@@ -44,8 +44,6 @@ const Quiz = () => {
   ],
 }
 
-
-const Quiz = () => {
   const [activeQuestion, setActiveQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState('')
   const [showResult, setShowResult] = useState(false)
@@ -141,4 +139,5 @@ const Quiz = () => {
       )}
     </div>
   )
-}
+};
+export default Quiz

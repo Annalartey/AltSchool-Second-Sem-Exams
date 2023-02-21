@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import Quiz from './Quiz'
+import Quiz from './Quiz'
 
 function GradeOneLesson() {
   
@@ -63,6 +63,7 @@ function GradeOneLesson() {
         <button onClick={handleSubmit}>Submit</button>
         <button onClick={mathCalc}>Next</button>
         <p className="score"> Score: {userScore}</p>
+        <Quiz/>
       </div>
     </div>
   );
