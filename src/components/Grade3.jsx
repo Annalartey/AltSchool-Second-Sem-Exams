@@ -43,9 +43,14 @@ const Quiz = () => {
     },
   ],
 }
-
+  
+  
+=======
+import { quiz } from '../../data/questions'
+import './quiz.css'
 
 const Quiz = () => {
+>>>>>>> origin/main
   const [activeQuestion, setActiveQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState('')
   const [showResult, setShowResult] = useState(false)
@@ -142,3 +147,5 @@ const Quiz = () => {
     </div>
   )
 }
+
+export default Quiz
