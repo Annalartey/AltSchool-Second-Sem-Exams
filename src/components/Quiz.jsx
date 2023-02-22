@@ -2,7 +2,8 @@ import { useState } from 'react'
 import './quiz.css'
 
 const Quiz = () => {
-
+let num1 = Math.ceil(Math.random() * 5)
+  let num2 = Math.ceil(Math.random() * 5)
   const quiz = {
   topic: 'Javascript',
   level: 'Beginner',
