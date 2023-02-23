@@ -140,7 +140,7 @@ function Dashboard() {
                 :
            <div className='w-60'>
                 <h1 className="text-center text-green-500 text-4xl font-semibold tracking-tight sm:text-4xl md:text-3xl lg:text-3xl xl:text-4xl">Please Login to access dashboard</h1>
-             <Link to ="/login" className="btn flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 mx-40 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Login</Link>
+             <Link to ="/login" className="btn-dash flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 mx-40 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Login</Link>
              </div>
             }
            
