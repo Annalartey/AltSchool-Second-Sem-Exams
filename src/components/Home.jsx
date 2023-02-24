@@ -5,6 +5,7 @@ import {Helmet} from 'react-helmet-async'
 import {Link} from 'react-router-dom'
 import "../App.css"
 import ClientsComments from './ClientsComments'
+import AffiliateLogo from './AffiliateLogo'
 function Home() {
   return (
     <>
@@ -57,7 +58,7 @@ function Home() {
 
       </main>
           <ClientsComments/>
-
+<AffiliateLogo/>
     </div>
 
     </>
