@@ -28,6 +28,7 @@ export default function AffiliateLogo () {
           return(
             <div>
               <p>{l.name}</p> 
+              <p>{l.pic}</p>
             </div>
            
           )
