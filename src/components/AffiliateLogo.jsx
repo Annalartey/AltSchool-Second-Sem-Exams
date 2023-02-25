@@ -22,7 +22,7 @@ export default function AffiliateLogo () {
   return (
   <div className="affiliate">
     hello affiliate schools
-    <div>
+    <div className='affiliate-con'>
       {
         logo.map((l) => {
           return(
