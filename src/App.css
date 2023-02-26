@@ -351,6 +351,5 @@ ul li ul li:hover {background: blue;}
 }
 .affiliate-con{
 display: flex;
-  flex-direction: column;
-  justify-content: center;
+justify-content: center;
 }

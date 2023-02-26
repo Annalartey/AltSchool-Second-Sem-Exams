@@ -21,7 +21,7 @@ export default function AffiliateLogo () {
   ]
   return (
   <div className="affiliate">
-    hello affiliate schools
+    <h1>hello affiliate schools</h1>
     <div className='affiliate-con'>
       {
         logo.map((l) => {
