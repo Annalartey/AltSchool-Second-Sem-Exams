@@ -1,10 +1,11 @@
 import React from 'react';
+import image from '../images/img1.jpg'
 
 export default function AffiliateLogo () {
   const logo = [
     {
       name: "company",
-      pic: "image"
+      pic: image
     },
      {
       name: "company",
