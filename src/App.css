@@ -32,6 +32,10 @@ button:hover{
   background: white;
   color: blue;
 }
+.hero-img{
+  border: 2px black;
+  border-radius: 100%
+}
 
 
 /*style for header  */
