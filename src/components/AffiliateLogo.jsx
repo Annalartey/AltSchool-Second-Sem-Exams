@@ -1,11 +1,11 @@
 import React from 'react';
-import image from '../images/img1.jpg'
+import image1 from "../images/img1.jpg"
 
 export default function AffiliateLogo () {
   const logo = [
     {
       name: "company",
-      pic: image
+      pic: image1,
     },
      {
       name: "company",
@@ -28,8 +28,8 @@ export default function AffiliateLogo () {
         logo.map((l) => {
           return(
             <div>
-              <p>{l.pic}</p>
-         <p>{l.name}</p> 
+              <img className="comment-img" src={l.pic} alt="logo"/>
+              <p>{l.name}</p> 
             </div>
            
           )
