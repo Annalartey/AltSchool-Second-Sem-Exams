@@ -9,15 +9,15 @@ export default function AffiliateLogo () {
     },
      {
       name: "company",
-      pic: "image"
+      pic: image1,
     },
      {
       name: "company",
-      pic: "image"
+      pic: image1,
     },
      {
       name: "company",
-      pic: "image"
+       pic: image1,
     },
   ]
   return (
