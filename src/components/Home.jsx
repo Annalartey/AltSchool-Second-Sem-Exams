@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import "../App.css"
 import ClientsComments from './ClientsComments'
 import AffiliateLogo from './AffiliateLogo'
+import Footer from './Footer'
 function Home() {
   return (
     <>
@@ -60,7 +61,7 @@ function Home() {
           <ClientsComments/>
 <AffiliateLogo/>
     </div>
-
+<Footer/>
     </>
   )
 }
