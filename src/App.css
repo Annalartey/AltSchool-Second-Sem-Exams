@@ -33,11 +33,7 @@ button:hover{
   color: blue;
 }
 .hero-img{
-  border: 2px black;
-  border-radius: 100%
-}
-
-
+  }
 /*style for header  */
 .logo{
   display: flex;
