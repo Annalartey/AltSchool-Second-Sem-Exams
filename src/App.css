@@ -39,6 +39,8 @@ button:hover{
   display: flex;
   align-items: center;
 }
+footer {
+  }
 /*style for lessons page*/
 
 .lessons-nav{
